@@ -1,10 +1,10 @@
 import "./App.css";
-
+import Users from "./components/Users";
 function App() {
   return (
-    <div className="App">
-      <h3 className="text-6xl text-orange-400">Todo App</h3>
-    </div>
+    <>
+      <Users />
+    </>
   );
 }
 
