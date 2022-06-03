@@ -2,13 +2,25 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div>
+    <div className="container-width">
       <div class="card w-96 bg-base-100 shadow-xl">
         <div class="card-body">
-          <h2 class="card-title">Card title!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+          <h2 class="card-title text-3xl text-blue-500">Login Now!</h2>
+          {/* login form input field */}
+          <input
+            type="text"
+            name="email"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+          <input
+            type="text"
+            name="password"
+            placeholder="Type here"
+            class="input input-bordered w-full max-w-xs"
+          />
+          <div class="card-actions justify-center">
+            <button class="btn btn-primary">Login</button>
           </div>
         </div>
       </div>
