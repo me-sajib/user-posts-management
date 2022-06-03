@@ -19,13 +19,13 @@ const Login = () => {
               type="text"
               name="email"
               placeholder="Enter your email"
-              class="input input-bordered w-full max-w-xs"
+              class="input input-bordered w-full max-w-xs my-2"
             />
             <input
               type="password"
               name="password"
               placeholder="Enter your password"
-              class="input input-bordered w-full max-w-xs"
+              class="input input-bordered w-full max-w-xs my-2"
             />
             <div class="card-actions justify-center">
               <button type="submit" class="btn btn-primary">
