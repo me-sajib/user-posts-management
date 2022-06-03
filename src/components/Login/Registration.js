@@ -77,6 +77,10 @@ const Registration = () => {
               <div class="card-actions justify-center">
                 <button class="btn btn-primary">Submit</button>
               </div>
+              <div class="divider">OR</div>
+              <div class="card-actions justify-center">
+                <button class="btn btn-success">Google</button>
+              </div>
               {error && <div class="text-red-500">{error.message}</div>}
             </form>
             {loading && <div class="text-blue-500">Loading...</div>}
