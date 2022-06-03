@@ -1,13 +1,32 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import auth from "../../config/firebase.init";
 
 const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  // navigate to the page
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
+
+  // user login
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    if (email && password) {
+      signInWithEmailAndPassword(email, password);
+    }
   };
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, navigate, from]);
+
   return (
     <div className="container-width">
       <div class="card w-96 bg-base-100 shadow-xl">
@@ -27,6 +46,8 @@ const Login = () => {
               placeholder="Enter your password"
               class="input input-bordered w-full max-w-xs my-2"
             />
+            {error && <div class="text-red-500">{error.message}</div>}
+            {loading && <div class="text-blue-500">Loading...</div>}
             <div class="card-actions justify-center">
               <button type="submit" class="btn btn-primary">
                 Login
