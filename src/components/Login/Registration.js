@@ -51,41 +51,43 @@ const Registration = () => {
   return (
     <div>
       <div className="container-width">
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title text-3xl text-blue-500">Registration</h2>
-            {/* login form input field */}
-            <form onSubmit={handleRegistration}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                class="input input-bordered w-full max-w-xs"
-              />
-              <input
-                type="text"
-                name="email"
-                placeholder="Enter your email"
-                class="input input-bordered w-full max-w-xs my-2"
-              />
-              <input
-                type="text"
-                name="password"
-                placeholder="Enter your password"
-                class="input input-bordered w-full max-w-xs mb-2"
-              />
-              <div class="card-actions justify-center">
-                <button class="btn btn-primary">Submit</button>
+        <div className="flex justify-center items-center">
+          <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title text-3xl text-blue-500">Registration</h2>
+              {/* login form input field */}
+              <form onSubmit={handleRegistration}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="input input-bordered w-full max-w-xs"
+                />
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Enter your email"
+                  class="input input-bordered w-full max-w-xs my-2"
+                />
+                <input
+                  type="text"
+                  name="password"
+                  placeholder="Enter your password"
+                  class="input input-bordered w-full max-w-xs mb-2"
+                />
+                <div class="card-actions justify-center">
+                  <button class="btn btn-primary">Submit</button>
+                </div>
+                <div class="divider">OR</div>
+                <div class="card-actions justify-center">
+                  <button class="btn btn-success">Google</button>
+                </div>
+                {error && <div class="text-red-500">{error.message}</div>}
+              </form>
+              {loading && <div class="text-blue-500">Loading...</div>}
+              <div className="justify-end">
+                Already have an account? <Link to="/">Login now</Link>
               </div>
-              <div class="divider">OR</div>
-              <div class="card-actions justify-center">
-                <button class="btn btn-success">Google</button>
-              </div>
-              {error && <div class="text-red-500">{error.message}</div>}
-            </form>
-            {loading && <div class="text-blue-500">Loading...</div>}
-            <div className="justify-end">
-              Already have an account? <Link to="/">Login now</Link>
             </div>
           </div>
         </div>
