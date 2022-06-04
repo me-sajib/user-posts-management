@@ -9,7 +9,13 @@ const Profile = () => {
     const title = e.target.title.value;
     const description = e.target.description.value;
     const image = e.target.image.value;
-    const postBody = { postBy: user.displayName, title, description, image };
+    const postBody = {
+      postBy: user.displayName,
+      email: user.email,
+      title,
+      description,
+      image,
+    };
 
     fetch("http://localhost:5000/posts", {
       method: "POST",
