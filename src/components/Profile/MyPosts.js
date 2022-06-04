@@ -15,7 +15,7 @@ const MyPosts = () => {
     })
       .then((res) => res.json())
       .then((data) => myPost(data));
-  }, [user]);
+  }, [myPost, userEmail]);
 
   if (loading) {
     return <div>Loading...</div>;
