@@ -6,7 +6,7 @@ import MyPosts from "./components/Profile/MyPosts";
 import Users from "./components/Users";
 import Home from "./Layouts/Home";
 import Navbar from "./Layouts/Navbar";
-import Profile from "./Layouts/Profile";
+import Profile from "./components/Profile/Profile";
 import PrivateRoute from "./Routes/PrivateRoute";
 function App() {
   return (
