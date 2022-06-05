@@ -17,7 +17,7 @@ const Profile = () => {
       image,
     };
 
-    fetch("http://localhost:5000/posts", {
+    fetch("https://fathomless-brushlands-22227.herokuapp.com/posts", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

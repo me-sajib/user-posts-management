@@ -7,12 +7,15 @@ const MyPosts = () => {
   const [post, myPost] = useState([]);
   const userEmail = user?.email;
   useEffect(() => {
-    fetch(`http://localhost:5000/posts/${userEmail}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      `https://fathomless-brushlands-22227.herokuapp.com/posts/${userEmail}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => myPost(data));
   }, [myPost, userEmail]);

@@ -33,13 +33,16 @@ const Registration = () => {
       });
 
       const body = { name, email };
-      fetch(`http://localhost:5000/users/${email}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      })
+      fetch(
+        `https://fathomless-brushlands-22227.herokuapp.com/users/${email}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        }
+      )
         .then((res) => res.json())
         .then((data) => console.log(data));
     }
