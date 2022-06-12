@@ -97,6 +97,18 @@ const Profile = () => {
                     class="input input-bordered"
                   />
                 </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Category</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="category"
+                    placeholder="post category"
+                    class="input input-bordered"
+                  />
+                </div>
+
                 <div class="form-control mt-6">
                   <button class="btn btn-primary">post</button>
                 </div>
