@@ -9,6 +9,19 @@ const Profile = () => {
     const title = e.target.title.value;
     const description = e.target.description.value;
     const image = e.target.image.value;
+    const category = e.target.category.value;
+
+    // check validation
+    if (
+      title.length === 0 ||
+      description.length === 0 ||
+      image.length === 0 ||
+      category.length === 0
+    ) {
+      alert("Please fill all the fields");
+      return;
+    }
+
     const postBody = {
       postBy: user.displayName,
       email: user.email,
@@ -49,9 +62,10 @@ const Profile = () => {
                     <span className="text-blue-500">{user.displayName} </span>
                   </h1>
                   <p class="py-6">
-                    Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                    assumenda excepturi exercitationem quasi. In deleniti eaque
-                    aut repudiandae et a id nisi.
+                    Is our best website and we are glad to have you here. i hope
+                    you enjoy our website. we are always looking for new
+                    members. we are always updating our website. if you have any
+                    questions please contact us.
                   </p>
                 </div>
               </div>
