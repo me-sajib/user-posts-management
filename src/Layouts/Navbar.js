@@ -50,6 +50,11 @@ const Navbar = () => {
                   <span class="badge">New</span>
                 </Link>
               </li>
+              <li>
+                <Link to="/addPost" class="justify-between">
+                  Add Post
+                </Link>
+              </li>
 
               <li>
                 <button onClick={() => signOut(auth)}>Logout</button>
