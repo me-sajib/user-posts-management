@@ -22,6 +22,17 @@ const MyPosts = () => {
     return <div>Loading...</div>;
   }
 
+  // delete post from database
+  const deletePost = (id) => {
+    fetch(`http://localhost:5000/posts/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return (
     <>
       {post.length > 0 ? (
@@ -37,7 +48,12 @@ const MyPosts = () => {
                   <h2 class="card-title">{post.title}</h2>
                   <p>{post.description}</p>
                   <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Delete now</button>
+                    <button
+                      class="btn btn-primary"
+                      onClick={() => deletePost(post._id)}
+                    >
+                      Delete now
+                    </button>
                   </div>
                 </div>
               </div>
