@@ -8,6 +8,7 @@ import Home from "./Layouts/Home";
 import Navbar from "./Layouts/Navbar";
 import Profile from "./components/Profile/Profile";
 import PrivateRoute from "./Routes/PrivateRoute";
+import AddPost from "./components/Profile/AddPost";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/posts" element={<MyPosts />}></Route>
+        <Route path="/addPost" element={<AddPost />}></Route>
         <Route path="/register" element={<Registration />}></Route>
         <Route
           path="/users"
