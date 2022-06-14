@@ -16,23 +16,30 @@ const Navbar = () => {
           Blog Site
         </a>
       </div>
+     
+
       {user && (
         <div class="flex-none gap-2">
           <Link to="/home">Home</Link>
           <Link to="/users">Users</Link>
+         
+          
+          <button className="btn" onClick={() => signOut(auth)}>Logout</button>
+          
 
           <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
               <div class="w-10 rounded-full">
                 <img
                   src={
-                    user.photoURL
-                      ? user.photoURL
+                    user?.photoURL
+                      ? user?.photoURL
                       : "https://w7.pngwing.com/pngs/7/618/png-transparent-man-illustration-avatar-icon-fashion-men-avatar-face-fashion-girl-heroes-thumbnail.png"
                   }
                   alt=""
                 />
               </div>
+              
             </label>
             <ul
               tabindex="0"
