@@ -10,15 +10,15 @@ const Posts = () => {
   }, []);
   return (
     <div className="container-width py-12">
-      {post.map((post) => (
-        <div key={post._id} class="card w-[100%] bg-base-100 shadow-xl my-12">
+      {post?.map((post) => (
+        <div key={post?._id} class="card w-[100%] bg-base-100 shadow-xl my-12">
           <div class="card-body">
             <h2 class="card-title">{post.title}</h2>
             <span className="text-gray-500 text-xs">post by {post.postBy}</span>
-            <p>{post.description}</p>
+            <p>{post?.description}</p>
           </div>
           <figure>
-            <img src={post.image} alt="Shoes" />
+            <img src={post?.image} alt="Shoes" />
           </figure>
         </div>
       ))}
