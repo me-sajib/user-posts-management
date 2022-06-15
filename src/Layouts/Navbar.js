@@ -48,19 +48,19 @@ const Navbar = () => {
             >
               <li>
                 <Link to="/profile" class="justify-between">
-                  <i class="fa-solid fa-user"></i>
+                  profile <i class="fa-solid fa-user"></i>
                   <span class="badge">New</span>
                 </Link>
               </li>
               <li>
                 <Link to="/posts" class="justify-between">
-                  <i class="fa-solid fa-blog"></i>
+                  My post<i class="fa-solid fa-blog"></i>
                   <span class="badge">New</span>
                 </Link>
               </li>
               <li>
-                <Link to="/addPost" class="justify-start">
-                  <i class="fa-solid fa-plus"></i>
+                <Link to="/addPost" class="justify-between">
+                  Add post<i class="fa-solid fa-plus"></i>
                 </Link>
               </li>
 
