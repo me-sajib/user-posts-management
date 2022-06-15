@@ -1,21 +1,21 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import Loading from "../components/Shared/Loading";
 import auth from "../config/firebase.init";
 
 const Banner = () => {
   const [user, loading] = useAuthState(auth);
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading></Loading>;
   }
   return (
     <div>
       <div
         class="hero min-h-[500px]"
         style={{
-          backgroundImage: `url(${
-            user?.photoURL ||
+          backgroundImage: `url(${user?.photoURL ||
             "https://res.cloudinary.com/practicaldev/image/fetch/s--B5VYSYKJ--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/tf723qnjv0c9269020dt.jpeg"
-          })`,
+            })`,
         }}
       >
         <div class="hero-overlay bg-opacity-60"></div>
