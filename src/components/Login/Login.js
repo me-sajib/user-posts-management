@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react'
-import {useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle} from 'react-firebase-hooks/auth'
-import {Link, useLocation, useNavigate} from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useSignInWithEmailAndPassword, useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import auth from '../../config/firebase.init'
+import Loading from '../Shared/Loading'
 
 const Login = () => {
     const [signInWithEmailAndPassword,
@@ -13,7 +14,7 @@ const Login = () => {
     const location = useLocation()
     let from = location.state
         ?.from
-            ?.pathname || '/'
+        ?.pathname || '/'
 
     // user login
     const handleLogin = (e) => {
@@ -34,12 +35,15 @@ const Login = () => {
         userGIT,
         loadingGIT,
         errorGIT] = useSignInWithGithub(auth,)
-
     useEffect(() => {
-        if (user || userG || userGIT ) {
-          navigate('/Home');
+        if (user || userG || userGIT) {
+            navigate('/Home');
         }
-    }, [user,userG,userGIT, navigate, from])
+    }, [user, userG, userGIT, navigate, from])
+
+    if (loading || loadingG || loadingGIT) {
+        return <Loading></Loading>
+    }
 
     return (
         <div className="bg-slate-100 py-28">
@@ -53,12 +57,12 @@ const Login = () => {
                                 type="text"
                                 name="email"
                                 placeholder="Enter your email"
-                                className="input input-css mb-4 bg-slate-100  input-bordered w-full max-w-xs my-2" required/>
+                                className="input input-css mb-4 bg-slate-100  input-bordered w-full max-w-xs my-2" required />
                             <input
                                 type="password"
                                 name="password"
                                 placeholder="Enter your password"
-                                className="input input-css mb-6 bg-slate-100  input-bordered w-full max-w-xs my-2" required/> {error && <div className="text-red-500">{error.message}</div>}
+                                className="input input-css mb-6 bg-slate-100  input-bordered w-full max-w-xs my-2" required /> {error && <div className="text-red-500">{error.message}</div>}
                             {loading && <div className="text-blue-500">Loading...</div>}
                             <div className="card-actions justify-center">
                                 <button type="submit" className="btn btn-css">
@@ -79,9 +83,9 @@ const Login = () => {
                                 GitHuub
                             </button>
                             {errorG && <div className="text-red-500">{errorG
-                                    ?.message}</div>}
+                                ?.message}</div>}
                             {errorGIT && <div className="text-red-500">{errorGIT
-                                    ?.message}</div>}
+                                ?.message}</div>}
                             {loadingG && <div className="text-blue-500">Loading...</div>}
                             {loadingGIT && <div className="text-blue-500">Loading...</div>}
                         </div>
