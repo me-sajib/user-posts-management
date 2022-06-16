@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from "react";
+import Loading from "../components/Shared/Loading";
 
 const Posts = () => {
   const [post, setPosts] = useState([]);
+  const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     fetch("http://localhost:5000/posts")
       .then((res) => res.json())
-      .then((data) => setPosts(data));
+      .then((data) => {
+        setPosts(data)
+      });
+
   }, []);
+
+
+  if (isLoading) {
+    return <Loading></Loading>
+  }
   return (
     <div className="container-width py-12">
       {post?.map((post) => (
